@@ -1,0 +1,56 @@
+﻿@model Examen_WEB.Entities.Estudiante
+
+@{
+    ViewData["Title"] = "Registro";
+    Layout = "~/Views/Shared/_LayoutExterno.cshtml";
+}
+
+<div class="card">
+    <div class="card-body register-card-body">
+        <p class="login-box-msg">Registrar Matrículas</p>
+
+        @using (Html.BeginForm("Index", "Home"))
+            {
+                @if (ViewBag.msj != null)
+                { 
+                  <div class="alert alert-info" style="text-align:center" role="alert">
+                      @ViewBag.msj
+                  </div>
+                }
+
+            <div class="input-group mb-3">
+                @Html.TextBoxFor(m => m.Nombre, new { @type = "text", @class = "form-control", @placeholder = "Nombre" })
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                @Html.TextBoxFor(m => m.Monto, new { @type = "text", @class = "form-control", @placeholder = "Monto" })
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                @Html.DropDownList("TipoCurso", @ViewBag.TipoCurso as List<SelectListItem>, "Seleccinar el Tipo de Curso", new { @class = "form-control" })
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                </div>
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary btn-block">Registrar Matrícula</button>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+    </div>

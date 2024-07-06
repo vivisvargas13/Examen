@@ -1,0 +1,28 @@
+﻿@model List<Examen_WEB.Entities.Estudiante>
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_LayoutExterno.cshtml";
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Monto</th>
+            <th>Tipo de Curso</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Fecha</td>
+                <td>@item.Monto</td>
+                <td>@item.TipoCurso</td>
+            </tr>
+        }
+    </tbody>
+</table>
